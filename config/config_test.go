@@ -27,9 +27,9 @@ import (
 	"github.com/uber/jaeger-lib/metrics"
 	"github.com/uber/jaeger-lib/metrics/testutils"
 
-	"github.com/uber/jaeger-client-go"
-	"github.com/uber/jaeger-client-go/log"
-	"github.com/uber/jaeger-client-go/transport"
+	"github.com/uber/jaeger-client-go/v2"
+	"github.com/uber/jaeger-client-go/v2/log"
+	"github.com/uber/jaeger-client-go/v2/transport"
 )
 
 func TestNewSamplerConst(t *testing.T) {
@@ -373,7 +373,7 @@ func TestInitGlobalTracer(t *testing.T) {
 		{
 			cfg: Configuration{
 				Sampler: &SamplerConfig{
-					Type: "remote",
+					Type:                    "remote",
 					SamplingRefreshInterval: 1,
 				},
 			},

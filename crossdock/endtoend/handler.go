@@ -24,10 +24,10 @@ import (
 	"github.com/opentracing/opentracing-go"
 	"github.com/opentracing/opentracing-go/ext"
 
-	"github.com/uber/jaeger-client-go"
-	"github.com/uber/jaeger-client-go/config"
-	"github.com/uber/jaeger-client-go/crossdock/common"
-	"github.com/uber/jaeger-client-go/crossdock/log"
+	"github.com/uber/jaeger-client-go/v2"
+	"github.com/uber/jaeger-client-go/v2/config"
+	"github.com/uber/jaeger-client-go/v2/crossdock/common"
+	"github.com/uber/jaeger-client-go/v2/crossdock/log"
 )
 
 const (
@@ -38,8 +38,8 @@ var (
 	endToEndConfig = config.Configuration{
 		Disabled: false,
 		Sampler: &config.SamplerConfig{
-			Type:  defaultSamplerType,
-			Param: 1.0,
+			Type:                    defaultSamplerType,
+			Param:                   1.0,
 			SamplingRefreshInterval: 5 * time.Second,
 		},
 		Reporter: &config.ReporterConfig{

@@ -23,7 +23,7 @@ import (
 	"github.com/uber/jaeger-lib/metrics"
 	"github.com/uber/jaeger-lib/metrics/testutils"
 
-	"github.com/uber/jaeger-client-go/internal/baggage"
+	"github.com/uber/jaeger-client-go/v2/internal/baggage"
 )
 
 func withTracerAndMetrics(f func(tracer *Tracer, metrics *Metrics, factory *metrics.LocalFactory)) {
